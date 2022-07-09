@@ -8,6 +8,9 @@ from django.core.mail import send_mail
 from django.contrib.auth.hashers import make_password, check_password
 from login.models import User, Retailer
 from .models import Product, Cart, CartItem, Orders, Wishlist
+from django.core.mail import EmailMessage
+
+
 
 
 def main_page(request, *args, **kwargs):
@@ -350,7 +353,7 @@ def orders(request, *args, **kwargs):
         email2 = email1.email
         user2 = email1.name
 
-        subject = 'Order Placed'
+        subject = "Order Placed"
         message = f'''
         Hi {user2}, your order has been placed. 
 

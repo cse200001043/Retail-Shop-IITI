@@ -129,8 +129,8 @@ EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'
 EMAIL_HOST = 'smtp.gmail.com'
 EMAIL_USE_TLS = True
 EMAIL_PORT = 587
-EMAIL_HOST_USER = 'retailiiti@gmail.com'
-EMAIL_HOST_PASSWORD = 'iitindore'
+EMAIL_HOST_USER = "cse200001043@iiti.ac.in"
+EMAIL_HOST_PASSWORD = '8708847515'
 
 
 # Default primary key field type
@@ -142,11 +142,11 @@ STATICFILES_DIRS = [
     os.path.join(BASE_DIR, 'static'),
 ]
 EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'
-EMAIL_HOST_USER = "retailiiti@gmail.com"
+EMAIL_HOST_USER = "cse200001043@iiti.ac.in"
 EMAIL_HOST = 'smtp.gmail.com'
 EMAIL_PORT = 587
 EMAIL_USE_TLS = True
-EMAIL_HOST_PASSWORD = 'iitindore'
+EMAIL_HOST_PASSWORD = '8708847515'
 
 PAYTM_MERCHANT_ID = '<your_merchant_id>'
 PAYTM_SECRET_KEY = '<your_paytm_secret_key>'

@@ -20,9 +20,9 @@ def homeview(request, *args, **kwargs):
 def forgetview(request, *args, **kwargs):
     if request.method == 'POST':
         email = request.POST.get('email')
-        name = request.POST.get('name')
+        # name = request.POST.get('name')
 
-        userlist = User.objects.filter(name=name, email=email).values()
+        userlist = User.objects.filter(email=email).values()
 
         if len(userlist) > 0:
             users = User.objects.get(email=email)
@@ -36,10 +36,21 @@ def forgetview(request, *args, **kwargs):
             context = {
                 "user": password
             }
-            return render(request, 'forgot-password1.html', context=context)
+            subject = "Password Reset"
+            message = f'''
+            Hi , your request for password reset has been accepted. 
+
+            Your new password is {password}
+            '''
+            email_from = settings.EMAIL_HOST_USER
+            recipient_list = [email, ]
+            send_mail(subject, message, email_from, recipient_list)
+            messages.info(request, "You can now login with new password")
+            return render(request, 'login-register.html')
 
         else:
             messages.info(request, 'EmailID is not registered')
+        
     return render(request, 'forgot-password.html')
 
 
